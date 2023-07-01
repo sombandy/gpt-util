@@ -33,8 +33,9 @@ e = time.time()
 print("Time taken", e - s)
 
 
+gpt = GPTUtil(enable_cache=False)
 print("Testing parallel calls")
-message_list = ["What is 2^10? Respond with an integer only:"] * 100
+message_list = ["What is 2^10? Respond with an integer only:"] * 10
 s = time.time()
 responses = [gpt.gpt_response(message) for message in message_list]
 t = time.time()
